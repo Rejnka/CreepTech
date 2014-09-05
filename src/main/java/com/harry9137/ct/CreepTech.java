@@ -1,14 +1,17 @@
 package com.harry9137.ct;
 
+import com.harry9137.ct.event.EnderTeleportEventHooks;
 import com.harry9137.ct.proxy.IProxy;
 import com.harry9137.ct.reference.reference;
-
 import com.harry9137.ct.utillity.LogHelper;
+
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.common.MinecraftForge;
+
 
 @Mod(modid = reference.MOD_ID, name = reference.MOD_NAME, version = reference.MOD_VERSION)
 public class CreepTech {
@@ -23,6 +26,12 @@ public class CreepTech {
     public void preInit(FMLPreInitializationEvent event){
 
         LogHelper.info("Pre-Init Started");
+
+        LogHelper.info("Registering Events");
+
+        MinecraftForge.EVENT_BUS.register(new EnderTeleportEventHooks());
+
+        LogHelper.info("Finished Registering Events");
 
 
         LogHelper.info("Pre-Init Complete");
