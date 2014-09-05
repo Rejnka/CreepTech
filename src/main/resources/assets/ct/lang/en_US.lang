@@ -1,0 +1,7 @@
+
+
+#Items
+item.ct:itemCreepLeaf.name=CreepLeaf
+
+#Creative Tabs
+itemGroup.ct=CreepTech

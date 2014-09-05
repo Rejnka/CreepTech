@@ -1,6 +1,8 @@
 package com.harry9137.ct;
 
 import com.harry9137.ct.event.EnderTeleportEventHooks;
+import com.harry9137.ct.event.EntityDeathEventHooks;
+import com.harry9137.ct.init.modItems;
 import com.harry9137.ct.proxy.IProxy;
 import com.harry9137.ct.reference.reference;
 import com.harry9137.ct.utillity.LogHelper;
@@ -30,8 +32,15 @@ public class CreepTech {
         LogHelper.info("Registering Events");
 
         MinecraftForge.EVENT_BUS.register(new EnderTeleportEventHooks());
+        MinecraftForge.EVENT_BUS.register(new EntityDeathEventHooks());
 
         LogHelper.info("Finished Registering Events");
+
+        LogHelper.info("Registering Items");
+
+        modItems.init();
+
+        LogHelper.info("Finished Registering Items");
 
 
         LogHelper.info("Pre-Init Complete");
