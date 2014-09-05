@@ -16,6 +16,9 @@ public class CreepTech {
     @Mod.Instance
     public static CreepTech instance;
 
+    @SidedProxy(clientSide = reference.CLIENT_PROXY_CLASS, serverSide = reference.SERVER_PROXY_CLASS)
+    public static IProxy proxy;
+
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event){
 
